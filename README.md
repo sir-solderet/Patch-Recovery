@@ -1,6 +1,6 @@
 # Patch-Recovery for Samsung Galaxy Tab A9 (GTA9)
 
-This repository provides a patched recovery image (such as Lineage Recovery or TWRP) for the Samsung Galaxy Tab A9 (GTA9). It is intended to be flashed using Odin on a Windows PC.
+This repository provides a patched recovery image for the Samsung Galaxy Tab A9 (GTA9). It is intended to be flashed using Odin on a Windows PC.
 
 ---
 
@@ -30,7 +30,7 @@ This repository provides a patched recovery image (such as Lineage Recovery or T
 
 - Windows PC
 - [Samsung USB Drivers](https://developer.samsung.com/mobile/android-usb-driver.html)
-- [Odin Tool (v3.14.1 or newer)](https://odindownload.com/)
+- [Odin Tool (v3.14.1 or newer)](https://samfw.com/blog/download-odin-all-version)
 - USB cable
 - Samsung Galaxy Tab A9 with **OEM Unlock** enabled
 
