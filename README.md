@@ -1,27 +1,102 @@
-# Similar script
-You can also refer this [script](https://github.com/engineer4t/fastboot-patcher)
+# Patch-Recovery for Samsung Galaxy Tab A9 (GTA9)
 
+This repository provides a patched recovery image (such as Lineage Recovery or TWRP) for the Samsung Galaxy Tab A9 (GTA9). It is intended to be flashed using Odin on a Windows PC.
 
-# Patch-Recovery
-This CI service patches recovery images of Samsung to enable Fastbootd. Based on Phh's [script](https://github.com/phhusson/samsung-galaxy-a51-gsi-boot)
+---
 
-# How to use:
-- Fork this repo.
-- Extract your recovery.img.lz4 and upload recovery.img or *img.lz4 to nextcloud or any other file hosting sites. Once uploaded right click on the Download button and copy the URL.
-- Head over to Actions tab. Click on RECOVERY -> Run workflow. Insert the copied URL in the RECOVERY URL field and Start the workflow
-- The Patching process will start
-- A Patched-Recovery.zip will be uploaded at the end of the process. Download it and extract your patched recovery image. The Image will already also be repacked to .tar for flashing directly through Odin
-![](https://s3.bmp.ovh/imgs/2022/04/19/91ef3a3ee9255e9c.png)
-- Flash vbmeta_disabled_r if needed
+## 📲 Device Info
 
-```
-ODIN AP Slot: Recovery.tar.md5
-ODIN User Slot: vbmeta_disabled_r.tar
-```
+- **Device Name:** Samsung Galaxy Tab A9
+- **Codename:** gta9
+- **Model Variants:** SM-X110 / SM-X115 / SM-X117
 
-# Important note
-- Make sure that the uploaded file can downloaded with wget command and will download a correct file. Nextcloud with public link works fine if you open the link on web and copy the url from the download button.
+---
 
-# Credits
-- [Phhusson](https://github.com/phhusson) Without his script nothing would be possible at the first place
-- [James Nguyen](https://github.com/thongass000) Helping me in simplifying the scripts and tweaking it
+## 📁 Files Provided
+
+- `recovery.img` – The raw recovery image
+- `recovery.tar.md5` – Odin-flashable recovery image
+
+---
+
+## ⚠️ Disclaimer
+
+> Flashing custom recovery images may void your warranty and could potentially brick your device.  
+> Proceed at your own risk and always make sure you know what you're doing.
+
+---
+
+## 🛠 Requirements
+
+- Windows PC
+- [Samsung USB Drivers](https://developer.samsung.com/mobile/android-usb-driver.html)
+- [Odin Tool (v3.14.1 or newer)](https://odindownload.com/)
+- USB cable
+- Samsung Galaxy Tab A9 with **OEM Unlock** enabled
+
+---
+
+## 🔓 Enable OEM Unlocking
+
+1. Go to **Settings > About tablet > Software information**
+2. Tap **Build number** 7 times to enable Developer Options
+3. Go back and open **Developer options**
+4. Enable **OEM unlocking**
+
+---
+
+## 🚀 Flashing Instructions (Using Odin)
+
+### 1. Boot Device into Download Mode
+
+- Power off the device completely  
+- Press and hold **Volume Up + Volume Down**, then plug in the USB cable  
+- Once on the warning screen, press **Volume Up** to enter **Download Mode**
+
+### 2. Flash Recovery Using Odin
+
+1. Open **Odin** on your PC
+2. Connect your device via USB — Odin should detect it (e.g. show `COMx`)
+3. Click the **AP** button and select the `recovery.tar.md5` file
+4. **IMPORTANT:** Uncheck **Auto Reboot** in the Options tab
+5. Click **Start** to begin flashing
+
+### 3. Boot into Recovery Immediately
+
+- Once flashing is complete and Odin shows **PASS**, disconnect the device  
+- Press and hold **Power + Volume Up** until the Samsung logo appears  
+- This will boot into the newly flashed recovery
+
+---
+
+## ✅ Verifying Recovery
+
+If successful, you will now see the LineageOS/TWRP recovery interface.  
+From here, you can:
+- Flash a custom ROM
+- Wipe partitions
+- Create/restore backups
+
+---
+
+## 🧰 Tips
+
+- **Do not let the device boot into the system after flashing recovery**, or it may be overwritten.
+- You can convert `.img` to `.tar.md5` using tools like `tar` and `md5sum` or Samsung-specific utilities (available via community tools).
+
+---
+
+## 🙏 Credits
+
+- Maintainer: [@sir-solderet](https://github.com/sir-solderet)
+- Odin by Samsung
+- Thanks to the Android developer community for documentation and tools
+
+---
+
+## 📎 Useful Links
+
+- [Samsung USB Drivers](https://developer.samsung.com/mobile/android-usb-driver.html)
+- [Download Odin](https://odindownload.com/)
+- [LineageOS Wiki](https://wiki.lineageos.org/)
+- [XDA Forums](https://forum.xda-developers.com/)
