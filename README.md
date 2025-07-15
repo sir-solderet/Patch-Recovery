@@ -8,7 +8,7 @@ This repository provides a patched recovery image (such as Lineage Recovery or T
 
 - **Device Name:** Samsung Galaxy Tab A9
 - **Codename:** gta9
-- **Model Variants:** SM-X110 / SM-X115 / SM-X117
+- **Model Variants:** SM-X110 / SM-X115
 
 ---
 
