@@ -71,32 +71,16 @@ This repository provides a patched recovery image for the Samsung Galaxy Tab A9 
 
 ## ✅ Verifying Recovery
 
-If successful, you will now see the LineageOS/TWRP recovery interface.  
+If successful, you will now see the Patch recovery interface.  
 From here, you can:
-- Flash a custom ROM
-- Wipe partitions
-- Create/restore backups
+- Enter Fastbootd
+- And all the normal stock recovery functions
 
 ---
 
 ## 🧰 Tips
 
-- **Do not let the device boot into the system after flashing recovery**, or it may be overwritten.
+- **Do not let the device boot into the system after flashing recovery**, or it may be overwritten. **Flash magisk patched boot.img**, it will not let the system overwrite the patched recovery.
 - You can convert `.img` to `.tar.md5` using tools like `tar` and `md5sum` or Samsung-specific utilities (available via community tools).
 
 ---
-
-## 🙏 Credits
-
-- Maintainer: [@sir-solderet](https://github.com/sir-solderet)
-- Odin by Samsung
-- Thanks to the Android developer community for documentation and tools
-
----
-
-## 📎 Useful Links
-
-- [Samsung USB Drivers](https://developer.samsung.com/mobile/android-usb-driver.html)
-- [Download Odin](https://odindownload.com/)
-- [LineageOS Wiki](https://wiki.lineageos.org/)
-- [XDA Forums](https://forum.xda-developers.com/)
