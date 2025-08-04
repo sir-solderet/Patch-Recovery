@@ -1,4 +1,4 @@
-name: RECOVERY
+name: Patched Recovery Fastbootd
 
 on:
   workflow_dispatch:
