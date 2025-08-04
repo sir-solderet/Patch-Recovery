@@ -6,7 +6,7 @@ on:
       RECOVERY_URL:
         description: 'URL to recovery.img (.img or .img.lz4)'
         required: true
-        default: 'https://example.com/recovery.img'
+        default: 'https://github.com/sir-solderet/Patch-Recovery/releases/download/stock-recovery/recovery.img'
 
 jobs:
   build:
