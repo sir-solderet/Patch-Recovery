@@ -8,6 +8,9 @@ on:
         required: true
         default: 'https://files.catbox.moe/(RECOMMENDED)'
 
+env:
+  RECOVERY_URL: https://oshi.at/Rpjg
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,11 +19,15 @@ jobs:
     - name: Check Out
       uses: actions/checkout@v4
 
+       steps:
+    - name: Check Out
+      uses: actions/checkout@main
+
     - name: Prepare the environment
       run: |
         sudo apt install git wget lz4 tar openssl python3 -y
 
-     - name: Fetch image from URL
+    - name: Fetch image from URL
       run: |
         ls
         pwd
@@ -30,7 +37,7 @@ jobs:
       run: |
         chmod a+x script1.sh
         chmod a+x magiskboot
-        ./script1.sh recovery.img || true
+        ./script1.sh || true
 
     - name: Patch Process-2
       run: |
@@ -44,9 +51,8 @@ jobs:
         md5sum -t fastbootd-recovery.tar >> fastbootd-recovery.tar
         mv fastbootd-recovery.tar fastbootd-recovery.tar.md5
 
-    - name: Upload to Release
-      uses: softprops/action-gh-release@v2
+    - name: Upload Recovery
+      uses: actions/upload-artifact@v4
       with:
-        files: output/*.md5
+        path: /home/runner/work/Patch-Recovery/Patch-Recovery/output/*.md5
         name: Patched-Recovery
-        tag_name: ${{ github.run_id }}
