@@ -19,7 +19,7 @@ jobs:
     - name: Check Out
       uses: actions/checkout@v4
 
-       steps:
+    steps:
     - name: Check Out
       uses: actions/checkout@main
 
