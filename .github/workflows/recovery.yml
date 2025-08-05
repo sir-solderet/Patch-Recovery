@@ -19,10 +19,6 @@ jobs:
     - name: Check Out
       uses: actions/checkout@v4
 
-    steps:
-    - name: Check Out
-      uses: actions/checkout@main
-
     - name: Prepare the environment
       run: |
         sudo apt install git wget lz4 tar openssl python3 -y
